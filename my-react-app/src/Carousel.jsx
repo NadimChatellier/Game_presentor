@@ -12,6 +12,7 @@ function Carousel({ fetchGames, platform, limit }) {
             setLoading(true);
             fetchGames(platform, limit) // Using the passed props here
                 .then((res) => {
+                    console.log(res.results)
                     setGames(res.results);
                 })
                 .catch((error) => {
@@ -97,7 +98,7 @@ function Carousel({ fetchGames, platform, limit }) {
 
     return (
         <div className="games-container">
-            <h1 className="page-title">{platform} Games</h1>
+            {/* <h1 className="page-title">{platform} Games</h1> */}
             {loading && <p className="loading-text">Loading games...</p>}
             {games.length === 0 && !loading && <p className="no-games-text">No games found.</p>}
             <div className="carousel-container">
