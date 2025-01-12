@@ -92,7 +92,7 @@ export const fetchGamesForRecentlyReleased = (platform, limit) => {
 export const fetchGame = () => {
 
     return axios.get(
-        `https://api.rawg.io/api/games/among-us?key=b51ee96f2e4e4800a8b4064e77d7c4a6`
+        `https://api.rawg.io/api/games/black-myth-wu-kong?key=b51ee96f2e4e4800a8b4064e77d7c4a6`
     )
         .then(({ data }) =>{
             return data

@@ -3,11 +3,12 @@ import "./index.css"
 import Carousel from './Carousel';
 import GamePage from './GamePage';
 import { fetchGamesForPC, fetchGamesForPlayStation5 , fetchGamesForMobile, fetchGamesForSwitch, fetchGamesForBestPS5Exclusives, fetchGamesForRecentlyReleased} from '../app';
+import Navbar from './Navbar';
 
 function App() {
     return (
         <div>
-            <h1 className="website-name">Game Carousels</h1>
+            <Navbar></Navbar>
             {/* Pass props to Carousel */}
             {/* <Carousel fetchGames={fetchGamesForPC} platform="0" />
             <Carousel fetchGames={fetchGamesForPlayStation5} platform="187" />

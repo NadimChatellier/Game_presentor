@@ -108,16 +108,44 @@ function GamePage() {
           <button className="borrow-button">Borrow Now</button>
         </div>
       </div>
-      <div className="game-further-info">{game.genres.map((genre) =><span key={genre.name} className="platform">
-                {genre.name}
-              </span>
-               )}
-            <p>{game.released}</p>
-            {game.stores.map((store) => {
-                return <p>{store.store.name}</p>
-            })}
+        <div className="game-further-info">
+  <div className="game-genres">
+    <h2>Genres</h2>
+    {game.genres.map((genre) => (
+      <span key={genre.name} className="genre-badge">
+        {genre.name}
+      </span>
+    ))}
+  </div>
+  <div className="game-release-date">
+    <h2>Release Date</h2>
+    <p>{new Date(game.released).toLocaleDateString()}</p>
+  </div>
+  <div className="game-stores">
+    <h2>Available Stores</h2>
+    {game.stores.map((store) => (
+      <p key={store.store.id} className="store-link">
+        {store.store.name}
+      </p>
+    ))}
+  </div>
+  <div className="game-playtime">
+  <h2>Average Playtime</h2>
+  <p>{game.playtime} hours</p>
+</div>
 
-              </div>
+  <div className="game-rating">
+    <h2>Rating</h2>
+    <p>{game.rating} / 5</p>
+  </div>
+  <div className="game-developers">
+    <h2>Developers</h2>
+    {game.developers?.map((dev) => (
+      <p key={dev.id}>{dev.name}</p>
+    ))}
+  </div>
+</div>
+
 
       <div className="game-description-container">
         <h1>Details</h1>

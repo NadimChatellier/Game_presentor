@@ -10,6 +10,7 @@
 
 /* Body Background */
 body {
+  padding-top: 50px;
   background: linear-gradient(135deg, #0B0C10 50%, #1F2833 100%);
   color: #fff; /* White text color */
   font-family: 'Arial', sans-serif;
@@ -541,16 +542,134 @@ button:hover {
 
 
 .game-further-info {
-  position: absolute;
-  margin-top: 20px;
-  right: 5%;
-  height: 80vh;
-  margin-bottom: 30px;
-  padding: 20px;
-  background-color: rgba(31, 40, 51, 0.7); /* Slight transparency with background color */
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  width: 80%;
+  /* gap: 1rem; */
+  background: #1e1e2f; /* Dark background for contrast */
+  color: #ffffff; /* Text color for readability */
+  padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.7); /* Add a shadow for depth */
-  color: #fff; /* White text for contrast */
-  z-index: 3;
-  width: 300px; /* Limit the width of the container */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  z-index: 1;
 }
+
+.game-further-info h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #66FCF1; /* Accent color */
+}
+
+.genre-badge {
+  display: inline-block;
+  background: #04D9FF;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+}
+
+.game-release-date p,
+.game-stores p,
+.game-rating p,
+.game-developers p {
+  font-size: 0.95rem;
+  margin: 0.3rem 0;
+}
+
+.store-link {
+  color: #3498db; /* Link color */
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.store-link:hover {
+  color: #1abc9c; /* Hover color */
+}
+
+
+
+
+
+
+
+
+
+
+/* Navbar Container */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #2a2a40;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  z-index: 10000;
+}
+
+/* Left, Center, Right Sections */
+.navbar-left,
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-center {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  cursor: pointer;
+}
+
+/* Navbar Items */
+.navbar-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  margin: 0 0.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  color: #eaeaea;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.navbar-item:hover {
+  background: #3c3c5c;
+  border-radius: 8px;
+}
+
+.navbar-item.active {
+  color: #ffc107;
+}
+
+/* Navbar Icons */
+.navbar-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 0.5rem;
+}
+
+/* Navbar Labels */
+.navbar-label {
+  padding: 7px;
+}
+
+.navbar-item:hover .navbar-label {
+  display: inline; /* Show on hover */
+}
+
+/* Navbar Logo */
+.navbar-logo {
+  height: 50px;
+}
+
