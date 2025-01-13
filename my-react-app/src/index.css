@@ -493,7 +493,7 @@ button:hover {
 
 .game-info-container {
   position: absolute;
-  top: 70%;
+  top: 15vh;
   left: 5%;
   margin-bottom: 30px;
   padding: 20px;
@@ -528,7 +528,9 @@ button:hover {
 }
 
 .borrow-button {
+
   padding: 10px 20px;
+  margin-top: 10px;
   font-size: 1rem;
   background-color: #45A29E; /* Light teal background */
   color: #fff; /* White text */
@@ -673,3 +675,166 @@ button:hover {
   height: 50px;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Big Carousel Container */
+.big-carousel-container {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  max-width: 1200px;
+  max-height: 90vh;
+  margin: 2rem auto;
+  overflow: hidden;
+}
+
+/* Big Carousel */
+.big-carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  scroll-behavior: smooth;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.big-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+/* Carousel Item */
+.big-carousel-item {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  cursor: pointer;
+  background: linear-gradient(145deg, #1a1f29, #0f1219);
+  border: 0px solid #66fcf1;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 0;
+}
+
+.big-carousel-item:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 20px 30px rgba(102, 252, 241, 0.3);
+}
+
+/* Carousel Image */
+.big-carousel-item img {
+  width: 100%;
+  height: 75%;
+  object-fit: cover;
+  border-bottom: 2px solid #66fcf1;
+}
+
+/* Navigation Buttons */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  color: #66fcf1;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.nav-btn.left {
+  left: 20px;
+}
+
+.nav-btn.right {
+  right: 20px;
+}
+
+.nav-btn:hover {
+  color: #fff;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .big-carousel-container {
+      height: 450px;
+  }
+}
+
+@media (max-width: 480px) {
+  .big-carousel-container {
+      height: 350px;
+  }
+}
+
+/* Carousel Dots Container */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 20px; /* Position the dots at the bottom of the carousel */
+  left: 0;
+  width: 100%;
+  z-index: 2; /* Keep the dots on top of carousel items */
+}
+
+/* Individual Dot */
+.dot {
+  width: 12px; /* Adjusted for better visibility */
+  height: 12px;
+  margin: 0 8px; /* Increased margin for better spacing */
+  border-radius: 50%;
+  background-color: #ddd;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Active Dot */
+.dot.active {
+  background-color: #66fcf1;
+  transition: ease 0.5s;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Heart Icon Styling */
+.game-info-container i {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  font-size: 1.2rem; /* Set the icon size */
+  color: white; /* Heart icon color */
+  margin-top: 15px;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect for the heart icon */
+.game-info-container i:hover {
+  transform: scale(1.2); /* Slightly enlarge the icon */
+  color: #e02020; /* Change color on hover */
+}

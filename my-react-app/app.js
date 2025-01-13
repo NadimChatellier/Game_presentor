@@ -11,9 +11,9 @@ import axios from "axios"
 //         });
 // };
 
-export const fetchGamesForPC = (limit) => {
-    const platform = 7; // PC platform ID
-    return axios.get(`https://api.rawg.io/api/games?ordering=-added&dates=2024-06-01,2025-01-09&key=b51ee96f2e4e4800a8b4064e77d7c4a6&page_size=20`)
+export const fetchGamesForPC = (platform) => {
+
+    return axios.get(`https://api.rawg.io/api/games?ordering=-added&dates=2024-06-01,2025-01-09&key=b51ee96f2e4e4800a8b4064e77d7c4a6&page_size=20&platforms=${platform}`)
         .then(({ data }) =>
             {
                 console.log(data.results[0])
@@ -92,7 +92,7 @@ export const fetchGamesForRecentlyReleased = (platform, limit) => {
 export const fetchGame = () => {
 
     return axios.get(
-        `https://api.rawg.io/api/games/black-myth-wu-kong?key=b51ee96f2e4e4800a8b4064e77d7c4a6`
+        `https://api.rawg.io/api/games/god-of-war-ragnarok?key=b51ee96f2e4e4800a8b4064e77d7c4a6`
     )
         .then(({ data }) =>{
             return data

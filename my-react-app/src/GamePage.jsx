@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./index.css";
 import { fetchGame, fetchTrailer, fetchYouTubeTrailers } from "../app";
 import Carousel from "./Carousel";
+import BigCarousel from "./BigCarousel";
 import TrailerPlayer from "./Trailer"; // Import the TrailerPlayer component
 import { fetchGamesForPC } from "../app";
 import "@dotlottie/player-component"; // Import Lottie Player component
@@ -91,23 +92,26 @@ function GamePage() {
   return (
     <div className="gamepage-container">
       <div className="game-info-wrapper">
-        <img
-          src={game?.background_image || "/default-game-banner.jpg"}
-          alt={game?.name || "Game Banner"}
-          className="game-banner"
-        />
-        <div className="game-info-container">
-          <h1>{game.name}</h1>
-          <div className="platforms-container">
-            {game.platforms?.map((platform, index) => (
-              <span key={index} className="platform">
-                {platform.platform.name}
-              </span>
-            ))}
-          </div>
-          <button className="borrow-button">Borrow Now</button>
-        </div>
-      </div>
+  <img
+    src={game?.background_image || "/default-game-banner.jpg"}
+    alt={game?.name || "Game Banner"}
+    className="game-banner"
+  />
+  <div className="game-info-container">
+    <h1>{game.name}</h1>
+    <div className="platforms-container">
+      {game.platforms?.map((platform, index) => (
+        <span key={index} className="platform">
+          {platform.platform.name}
+        </span>
+      ))}
+    </div>
+    
+    <button className="borrow-button">Borrow Now</button>
+    <i className="fa-regular fa-heart"></i> {/* Corrected Font Awesome icon usage */}
+  </div>
+</div>
+
         <div className="game-further-info">
   <div className="game-genres">
     <h2>Genres</h2>
@@ -117,6 +121,7 @@ function GamePage() {
       </span>
     ))}
   </div>
+  
   <div className="game-release-date">
     <h2>Release Date</h2>
     <p>{new Date(game.released).toLocaleDateString()}</p>
@@ -177,7 +182,8 @@ function GamePage() {
       <div className="game-description-container">
         <h1>We think you would like:</h1>
       </div>
-      <Carousel fetchGames={fetchGamesForPC} platform="0" />
+      <Carousel fetchGames={fetchGamesForPC} platform="187" />
+      <BigCarousel fetchGames={fetchGamesForPC} platform="187" />
     </div>
   );
 }
